@@ -1,0 +1,43 @@
+Table users {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  password varchar
+  role varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table categories {
+  id int [pk, increment]
+  name varchar
+}
+
+Table products {
+  id int [pk, increment]
+  name varchar
+  description text
+  purchase_price float
+  sell_price float
+  category_id int
+  stock int
+  min_stock_alert int
+  image_url varchar
+  status varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table stock_logs {
+  id int [pk, increment]
+  product_id int
+  change_type text
+  amount int
+  "note" text
+  created_at timestamp
+}
+
+
+
+Ref: products.category_id > categories.id
+Ref: stock_logs.product_id > products.id
