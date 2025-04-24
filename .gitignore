@@ -1,0 +1,16 @@
+# Ignore environment files
+.env
+.env.*
+
+# Ignore vendor & node_modules
+/vendor
+/node_modules
+
+# Ignore Laravel specific stuff
+/public/storage
+/storage/*.key
+/.idea
+/.vscode
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
